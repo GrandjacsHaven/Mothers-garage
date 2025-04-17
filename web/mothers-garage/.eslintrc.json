@@ -1,0 +1,11 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "plugins": [],
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-invalid-html-attribute": "error",
+    "jsx-a11y/heading-has-content": "error",
+    "jsx-a11y/html-has-lang": "error"
+  }
+}

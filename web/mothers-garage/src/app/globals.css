@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 283 53% 37%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 283 53% 37%;
+    --radius: 0.5rem;
+
+    /* Global spacing variables */
+    --page-padding-x: 1rem;
+    --page-padding-y: 1.5rem;
+    --page-max-width: 72rem; /* 1152px - equivalent to max-w-6xl */
+
+    /* Responsive spacing */
+    --section-gap: 2rem;
+    --content-gap: 1.5rem;
+
+    @media (min-width: 640px) {
+      --page-padding-x: 1.5rem;
+      --page-padding-y: 2rem;
+      --section-gap: 3rem;
+      --content-gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      --page-padding-x: 2rem;
+      --page-padding-y: 2.5rem;
+      --section-gap: 4rem;
+      --content-gap: 2.5rem;
+    }
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 283 53% 37%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 283 53% 37%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Global layout utility classes */
+@layer components {
+  .page-container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl w-full;
+  }
+
+  .page-container-sm {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl w-full;
+  }
+
+  .page-container-lg {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full;
+  }
+
+  .page-container-full {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+
+  .page-section {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  .page-section-sm {
+    @apply py-4 sm:py-6 lg:py-8;
+  }
+
+  .content-container {
+    @apply space-y-6 sm:space-y-8;
+  }
+}
+
+/* Custom styles for PayPal buttons */
+.paypal-button-container {
+  width: 100%;
+  min-height: 250px;
+  margin: 0 auto;
+}
+
+/* Make dialog content scrollable */
+.dialog-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Scale animations for cards */
+.scale-101 {
+  transform: scale(1.01);
+}
+
+.scale-102 {
+  transform: scale(1.02);
+}
+
+/* Ensure PayPal iframe is visible */
+iframe[title="PayPal"] {
+  min-height: 400px !important;
+  width: 100% !important;
+}
+
+/* Fix for PayPal card fields */
+.paypal-card-form {
+  width: 100%;
+  min-height: 300px;
+}
+
+/* Subscription card styles */
+.subscription-card-container {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.subscription-card {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.subscription-card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .subscription-card {
+    max-width: 100%;
+  }
+}
